@@ -362,7 +362,7 @@ table{padding: 0 1.5rem;}
 .newcar-modal .modal-dialog { max-width: 1050px!important;margin-top: 4.5rem }
 .modal-header{position: absolute; border: 0px; padding: 0; color: white; border-radius: 100%;width: 100%;}
 .modal-header .close{opacity: 1; width: 36px; height: 38px; border-radius: 20px; display: flex;background: #007bff; justify-content: center; align-items: center;}
-.modal-header .close span{opacity: 1;font-size: 2rem;font-weight: 400;color: white;/* width: 100%; *//* margin: auto; */}
+.modal-header .close span{opacity: 1;    padding-bottom: 7px;font-size: 2rem;font-weight: 400;color: white;/* width: 100%; *//* margin: auto; */}
 .carlist-heading h4{font-size: 14px;color: var(--color-primary); width: 130px;text-transform: capitalize;}
 .carlist-heading span{width: 150px;color: var(--color-light);font-size: 13px;}
 .carlist-heading{display: flex; align-items: center;}
@@ -431,9 +431,9 @@ Dealer screens css
 .calender-view .datepicker-inline {      width: 100%;  padding: 0 1rem;}
 .calender-view .table-condensed{width: 100%!important;}
 .calender-view #calendar{width: 50%;}
-.app-main-calendar{ display: flex;}
+.app-main-calendar{   display: flex;  flex-direction: column;}
 .calendar-from .form-control{padding: 0.575rem 0.75rem ;}
-.calender-view .calendar-from{display: flex;    justify-content: center;    width: 50%;    align-items: center;    background: #8080801a;    flex-direction: column;}
+.calender-view .calendar-from{display: flex;    padding: 2rem 0;    justify-content: center;    width: 100%; height: 100%; align-items: center;     background: #8080801a;    flex-direction: column;}
 .edit-calendar-panel{    padding: 2.5rem;  display: flex;  justify-content: center;}
 .edit-calendar-panel #appt-time{    padding: 8px 9px;   border-radius: 10px;}
 .view-detail-inspection h4{width: 28%!important;}
@@ -444,11 +444,18 @@ Dealer screens css
   padding: 25px 30px 10px;
   justify-content: space-between;
 }
-
+.blank-cell{width: 14%;}
+.calendar-days .calendar-cell {  width: 14%;    display: flex;  justify-content: flex-start;  padding-left: 14px;}
+.app-main-calendar .calendar-header{    text-align: center;  display: flex; justify-content: space-around;}
+.calendar-body .days-of-week{    display: flex; justify-content: space-between;}
+.calendar-days {flex-wrap: wrap;}
+.calendar-body .days-of-week div {  width: 14%;}
 header .calendar-navigation {
   display: flex;
 }
-
+.calendar-from .form-group label{padding-right: 10px;}
+.edit-calendar-panel div{display: flex;}
+.edit-calendar-panel div label{padding-right: 10px;}
 header .calendar-navigation span {
   height: 38px;
   width: 38px;
@@ -636,6 +643,7 @@ header .calendar-current-date {
 	.our-priority { width: 100%;}
 	.dealer-section { width: 80%!important}
 	.dealer-signin form {  width: 100%;}
+	.edit-calendar-panel { padding: 0.5rem; padding: 10px 0; align-content: center;    }
 
 }
 
@@ -651,4 +659,7 @@ header .calendar-current-date {
  	.bookappointment-btn a{white-space: normal;}
  	.experience-seamless-panel { margin: 1rem!important;padding: 1rem!important;}
  	.bookappointment-btn {text-align: center;}
+ 	.calender-view {  padding: .2rem;}
+ 	.edit-calendar-panel div {  display: flex;  flex-wrap: wrap;}
+ 	.flexslider .slides img {  height: 100%;  object-fit: cover;}
 }

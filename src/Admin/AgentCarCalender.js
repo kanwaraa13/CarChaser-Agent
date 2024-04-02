@@ -93,25 +93,31 @@ export const AgentCarCalender = () => {
                      </div>
                      <div class="modal-body ">
                          <div class="calender-view">
-                             <div class="app">
-                                 <div class="app-main-calendar">
-                                        <div className="calendar-header">
-                                            <button onClick={() => setDate(new Date(date.getFullYear(), date.getMonth() - 1, 1))}>
-                                                <span id="calendar-prev" class="material-symbols-rounded">
-                                                  <i class="fa-solid fa-chevron-left"></i>
-                                                </span>
-                                            </button>
-                                            <h2>{new Date(date).toLocaleDateString('default', { month: 'long', year: 'numeric' })}</h2>
-                                            <button onClick={() => setDate(new Date(date.getFullYear(), date.getMonth() + 1, 1))}>
-                                                <span id="calendar-next" class="material-symbols-rounded">
-                                                     <i class="fa-solid fa-chevron-right"></i>
-                                                </span>
-                                            </button>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="app">
+                                        <div class="app-main-calendar">
+                                                <div className="calendar-header">
+                                                    <button onClick={() => setDate(new Date(date.getFullYear(), date.getMonth() - 1, 1))}>
+                                                        <span id="calendar-prev" class="material-symbols-rounded">
+                                                        <i class="fa-solid fa-chevron-left"></i>
+                                                        </span>
+                                                    </button>
+                                                    <h2>{new Date(date).toLocaleDateString('default', { month: 'long', year: 'numeric' })}</h2>
+                                                    <button onClick={() => setDate(new Date(date.getFullYear(), date.getMonth() + 1, 1))}>
+                                                        <span id="calendar-next" class="material-symbols-rounded">
+                                                        <i class="fa-solid fa-chevron-right"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <div className="calendar-body">
+                                                    <div className="days-of-week">{renderDaysOfWeek()}</div>
+                                                    <div className="calendar-days d-flex">{renderCalendarCells()}</div>
+                                                </div>
                                         </div>
-                                        <div className="calendar-body">
-                                            <div className="days-of-week">{renderDaysOfWeek()}</div>
-                                            <div className="calendar-days">{renderCalendarCells()}</div>
-                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
                                        <div class="calendar-from">
                                         <div class="form-group">
                                              <label for="exampleFormControlSelect1">From</label>
@@ -152,9 +158,9 @@ export const AgentCarCalender = () => {
                                              </div>
                                          </div>
                                      </div>
-         
+                                     </div>
                                  </div>
-                             </div>
+                             
                              <div class="text-center mt-4">
                                  <a href="#" class="btn btn-primary" data-dismiss="modal"> Submit</a>
                              </div>
@@ -180,6 +186,7 @@ export const AgentCarCalender = () => {
                      <div class="edit-calendar-panel">
                         <div>
                            <label for="appt-time">From</label>
+                           <div class="select-flex"> 
                             <select value={hours} onChange={handleHourChange}>
                                 {Array.from({ length: 12 }, (_, i) => (i + 1).toString().padStart(2, '0')).map(hour => (
                                 <option key={hour} value={hour}>{hour}</option>
@@ -195,9 +202,11 @@ export const AgentCarCalender = () => {
                                 <option value="am">AM</option>
                                 <option value="pm">PM</option>
                             </select>
+                            </div>
                         </div>
                         <div class="ml-4">
-                           <label for="appt-time">To</label>                              
+                           <label for="appt-time">To</label>  
+                           <div class="select-flex">                    
                            <select value={hours} onChange={handleHourChange}>
                                 {Array.from({ length: 12 }, (_, i) => (i + 1).toString().padStart(2, '0')).map(hour => (
                                 <option key={hour} value={hour}>{hour}</option>
@@ -213,6 +222,7 @@ export const AgentCarCalender = () => {
                                 <option value="am">AM</option>
                                 <option value="pm">PM</option>
                             </select>
+                            </div>  
                         </div>
                      </div>
                   </div>
